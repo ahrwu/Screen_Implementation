@@ -8,11 +8,9 @@
         form {
             width: 500px;
         }
-
         input[type="number"] {
             width: 60px;
         }
-
         textarea {
             width: 100%;
             height: 60px;
@@ -27,26 +25,23 @@
     <form>
         <fieldset>
             <legend>주문하기</legend>
-
-            <h3>주문 할 상품을 선택해주세요</h3>
-
+            
+            <h4>주문 할 상품을 선택해주세요</h4>
+            <input type="checkbox" id="fruit_set">
             <label for="fruit_set">과일선물세트</label>
             <input type="number" id="fruit_set" name="fruit_set" min="0" max="5" value="0">
             <span>(최대 5개)</span><br>
-
+            <input type="checkbox" id="ginseng_set">
             <label for="ginseng_set">홍삼선물세트</label>
             <input type="number" id="ginseng_set" name="ginseng_set" min="0" max="10" step="2" value="0">
             <span>(2개 1세트, 최대 10개)</span><br>
 
-            <h3>포장 선택</h3>
-
+            <h4>포장 선택</h4>
             <input type="radio" id="ribbon_yes" name="ribbon" value="yes">
             <label for="ribbon_yes">리본 포장</label>
-
             <input type="radio" id="ribbon_no" name="ribbon" value="no">
             <label for="ribbon_no">리본 포장 안 함</label><br>
         </fieldset>
-
         <fieldset>
             <legend>배송 정보</legend>
             <ul>
@@ -54,12 +49,10 @@
                     <label for="name">이름</label>
                     <input type="text" id="name" name="name" placeholder="공백 없이 입력하세요" onfocus="this.placeholder=''" onblur="if(this.value==''){this.placeholder='공백 없이 입력하세요'}"><br>
                 </li>
-
                 <li>
                     <label for="phone">연락처</label>
                     <input type="tel" id="phone" name="phone" placeholder="-를 빼고 입력하세요" onfocus="this.placeholder=''" onblur="if(this.value==''){this.placeholder='-를 빼고 입력하세요'}"><br>
                 </li>
-
                 <li>
                     <label for="email">이메일</label>
                     <input type="email" id="email" name="email">
@@ -69,24 +62,20 @@
                         <option value="naver.com">@naver.com</option>
                     </select><br>
                 </li>
-
                 <li>
                     <label for="box_image">박스 디자인 이미지</label>
                     <input type="file" id="box_image" name="box_image"><br>
                 </li>
-
                 <li>
                     <label for="delivery_date">희망 배송일</label>
                     <input type="date" id="delivery_date" name="delivery_date" min="2024-09-01" max="2024-09-10"><br>
                 </li>
-
                 <li>
                     <label for="message">배송 메시지</label>
                     <textarea id="message" name="message" maxlength="50" rows="3" placeholder="최대 50자까지 입력 가능합니다."></textarea><br>
                 </li>
             </ul>
         </fieldset><br>
-
         <input type="submit" value="제출하기">
         <input type="reset" value="다시 작성">
     </form>
