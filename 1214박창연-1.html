@@ -6,6 +6,7 @@
     <title>Document</title>
     <style>
         fieldset{
+            margin-bottom: 20px;
             width: 425px;
         }
     </style>
@@ -19,7 +20,7 @@
                 <input type="text" id="id">
             </li>
             <li>
-                <label for="email">이메일</label>
+                <label for="email">이메일</label>yes
                 <input type="email" id="email">
             </li>
             <li>
@@ -32,28 +33,25 @@
             </li>
         </ul>
     </fieldset>
-    <br>
     <fieldset>
         <legend>이벤트와 새로운 소식</legend>
-        <input type="radio" id="news" name="news">
-        <label for="news">메일 수신</label>
-        <input type="radio" id="news2" name="news">
-        <label for="news2">메일 수신 안 함</label>
+        <input type="radio" id="yes" name="news" value="yes" checked>
+        <label for="yes">메일 수신</label>
+        <input type="radio" id="no" name="news" value="no">
+        <label for="no">메일 수신 안 함</label>
     </fieldset>
-    <br>
     <fieldset>
         <legend>알게된 경로(복수 응답 가능)</legend>
-        <input type="checkbox" id="know">
+        <input type="checkbox" id="know" value="0">
         <label for="know">인터넷 검색</label>
-        <input type="checkbox" id="know2">
+        <input type="checkbox" id="know2" value="1">
         <label for="know2">친구 추천</label>
-        <input type="checkbox" id="know3">
+        <input type="checkbox" id="know3" value="2">
         <label for="know3">SNS 광고</label>
-        <input type="checkbox" id="know4">
+        <input type="checkbox" id="know4" value="3">
         <label for="know4">기타</label>
     </fieldset>
-    <br>
     <input type="submit" value="가입하기">
-    <input type="reset" value="취소">
+    <button type="reset">취소</button>
 </body>
 </html>
