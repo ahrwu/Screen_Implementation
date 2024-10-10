@@ -1,0 +1,28 @@
+*{
+    background-color: pink;
+}
+
+div{
+    width: 200px;
+    height: 200px;
+    border: 3px solid green;
+    padding: 30px 100px 10px 0;
+    margin: 30px auto;/* auto 사용하면 가운데 정렬가능 */
+}
+
+/* .cb{
+    border-top-style: double;
+    border-bottom-style: double;
+    border-style: double solid dashed;
+    border-width: 50px 1px 20px 15px;
+    border-color: red pink;
+} */
+
+.bb{
+    box-sizing: border-box;
+}
+
+img{
+    width: 500px;
+    border-radius: 50%;
+}
