@@ -1,0 +1,35 @@
+div{
+    display: inline-block;
+    width: 150px;
+    height: 150px;
+}
+
+.box1{
+    background: red;
+}
+
+.box2{
+    background: orange;
+    position: relative;
+    top: 100px;
+    left: 200px;
+}
+
+.box3{
+    background: yellow;
+    position: absolute;
+    top: 50px;
+    right: 80px;
+}
+
+.box4{
+    background: green;
+    position: fixed;
+    right: 10%;
+    bottom: 10%;
+}
+
+p{
+    font-size: 100px;
+    visibility: hidden;
+}

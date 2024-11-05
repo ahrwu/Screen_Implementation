@@ -1,0 +1,23 @@
+.box1{
+    background: red;
+    position: absolute;
+    z-index: 1;
+}
+
+.box2{
+    background: orange;
+    position: absolute;
+    z-index: 10;
+}
+
+.box3{
+    background: yellow;
+    position: absolute;
+    z-index: 100;
+}
+
+.box4{
+    background: green;
+    position: absolute;
+    z-index: 1000;
+}

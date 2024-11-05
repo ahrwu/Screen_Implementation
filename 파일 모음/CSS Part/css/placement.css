@@ -1,0 +1,31 @@
+.draw{
+    width: 10%;
+    padding: 7% 2%;
+    text-align: center;
+}
+.box1 {
+    background: red;
+    float: left;
+}
+.box2 {
+    background: orange;
+    float: right;
+}
+.box3 {
+    background: yellow;
+    float: left;
+}
+.box4 {
+    background: blue;
+    float: right;
+}
+.box5 {
+    width: 7.5%;
+    padding: 7% 20%;
+    background: green;
+    clear: both;
+}
+.box6 {
+    background: black;
+    width: 200px;
+}
