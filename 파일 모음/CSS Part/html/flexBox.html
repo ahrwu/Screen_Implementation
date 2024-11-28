@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flexBox</title>
+    <style>
+        .container{
+            width: 80%;
+            display: flex;
+            background-color: #eee;
+            border: 1px solid #222;
+            margin: 20px auto;
+        }
+
+        .draw {
+            width: 50px;
+            padding: 20px 45px;
+            margin: 5px;
+            text-align: center;
+        }
+
+        .draw:nth-child(odd){ background-color: #e9c46a }
+        .draw:nth-child(even){ background-color: #e76f51 }
+        
+        #opt1{ flex-wrap: nowrap }
+        #opt2{ flex-wrap: wrap }
+        #opt3{ flex-wrap: wrap-reverse }
+    </style>
+</head>
+<body>
+    <div class="container" id="opt1">
+        <div class="draw">1</div>
+        <div class="draw">2</div>
+        <div class="draw">3</div>
+        <div class="draw">4</div>
+        <div class="draw">5</div>
+        <div class="draw">6</div>
+    </div>
+    <div class="container" id="opt2">
+        <div class="draw">1</div>
+        <div class="draw">2</div>
+        <div class="draw">3</div>
+        <div class="draw">4</div>
+        <div class="draw">5</div>
+        <div class="draw">6</div>
+    </div>
+    <div class="container" id="opt3">
+        <div class="draw">1</div>
+        <div class="draw">2</div>
+        <div class="draw">3</div>
+        <div class="draw">4</div>
+        <div class="draw">5</div>
+        <div class="draw">6</div>
+    </div>
+    <!-- <div class="container" id="opt4">
+        <div class="draw">1</div>
+        <div class="draw">2</div>
+        <div class="draw">3</div>
+    </div> -->
+</body>
+</html>

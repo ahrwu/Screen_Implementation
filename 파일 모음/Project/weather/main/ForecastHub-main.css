@@ -1,0 +1,265 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.hidden {
+    visibility: hidden;
+    opacity: 0;
+}
+
+.visible {
+    visibility: visible;
+    opacity: 1;
+}
+
+body {
+    background: url(https://www.pewtrusts.org/-/media/post-launch-images/2020/03/gettyimages838815210jpgmaster/16x9_m.jpg?mw=1290&hash=01824D67F13A5B132C208C431AB4CD40);
+    background-size: cover;
+    margin: 0;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    top: auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+/* .hover-trigger {
+    background-color: #fff;
+    width: 100%;
+    height: 50px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+}
+.hover-trigger:hover + header {
+    transform: translateY(0);
+} */
+header {
+    background: linear-gradient(
+        to right,
+        #cdb4db,
+        #ffafcc,
+        #ffc8dd,
+        #bde0fe,
+        #a2d2ff
+    );
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    align-items: center;
+    justify-content: right;
+    border-bottom: 1px solid black;
+    z-index: 1000;
+    /* transform: translateY(-100%);
+    -webkit-transition: 0.75s ease;
+    transition: 0.75s ease; */
+}
+header div {
+    margin-right: auto;
+    /* 드래그 방지 */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.logo {
+    color: black;
+    font-family: Comfortaa, sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    margin-left: 30px;
+    text-decoration-line: none;
+}
+
+nav {
+    position: relative;
+    background-color: #e5e5e5;
+    top: 110.8px;
+    left: 70px;
+    width: 110px;
+    height: 110px;
+    padding: 20px;
+    border: 1px solid black;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+nav:before {
+    content: "";
+    position: absolute;
+    top: -18px;
+    left: calc(65% - 17px);
+    border-left: 21px solid transparent;
+    border-right: 21px solid transparent;
+    border-bottom: 18px solid black;
+}
+nav:after {
+    content: "";
+    position: absolute;
+    top: -16.4px;
+    left: calc(65% - 16.5px);
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-bottom: 17px solid #e5e5e5;
+}
+
+main {
+    background-color: #87ceeb;
+    /* border-radius: 15px; */
+    display: flex;
+    width: 65vw;
+    height: 60vh;
+}
+
+.present {
+    background-color: #e2bd88;
+    width: 35%;
+    height: 100%;
+}
+
+.time {
+    background-color: #fff;
+    width: 65%;
+    height: 100%;
+}
+
+.menu {
+    display: flex; /* 햄버거 메뉴를 플렉스 컨테이너로 설정 */
+    flex-direction: column; /* 세로 방향으로 정렬 */
+    justify-content: space-between; /* 막대 사이 간격 균등 */
+    width: 40px; /* 메뉴 버튼의 너비 */
+    cursor: pointer; /* 클릭 가능하도록 포인터 변경 */
+    position: relative;
+    margin-right: 30px;
+    display: flex; /* 필요한 경우 추가 요소를 위한 플렉스 컨테이너 */
+    align-items: center; /* 세로 가운데 정렬 */
+    height: 60%; /* 오른쪽 여백 */
+}
+
+.menu span {
+    display: block; /* 막대를 블록 요소로 설정 */
+    width: 100%; /* 부모 요소 너비에 맞춤 */
+    height: 5px; /* 막대 두께 */
+    background-color: black; /* 막대 색상 */
+    border-radius: 2px; /* 약간 둥근 모서리 */
+}
+
+/* type-07 */
+/* 라인이 하나로 합쳐졌다가 엑스자 만들기 */
+.menu.type7 span:nth-of-type(1) {
+    -webkit-animation: menu-bar07-01 0.75s forwards;
+    animation: menu-bar07-01 0.75s forwards;
+}
+@-webkit-keyframes menu-bar07-01 {
+    0% {
+        -webkit-transform: translateY(12.7px) rotate(45deg);
+    }
+    50% {
+        -webkit-transform: translateY(12.7px) rotate(0);
+    }
+    100% {
+        -webkit-transform: translateY(0) rotate(0);
+    }
+}
+@keyframes menu-bar07-01 {
+    0% {
+        transform: translateY(12.7px) rotate(45deg);
+    }
+    50% {
+        transform: translateY(12.7px) rotate(0);
+    }
+    100% {
+        transform: translateY(0) rotate(0);
+    }
+}
+.menu.type7 span:nth-of-type(2) {
+    transition: all 0.25s 0.25s;
+    opacity: 1;
+}
+.menu.type7 span:nth-of-type(3) {
+    -webkit-animation: menu-bar07-02 0.75s forwards;
+    animation: menu-bar07-02 0.75s forwards;
+}
+@-webkit-keyframes menu-bar07-02 {
+    0% {
+        -webkit-transform: translateY(-12.7px) rotate(-45deg);
+    }
+    50% {
+        -webkit-transform: translateY(-12.7px) rotate(0);
+    }
+    100% {
+        -webkit-transform: translateY(0) rotate(0);
+    }
+}
+@keyframes menu-bar07-02 {
+    0% {
+        transform: translateY(-12.7px) rotate(-45deg);
+    }
+    50% {
+        transform: translateY(-12.7px) rotate(0);
+    }
+    100% {
+        transform: translateY(0) rotate(0);
+    }
+}
+.menu.active-7 span:nth-of-type(1) {
+    -webkit-animation: active-menu-bar07-01 0.75s forwards;
+    animation: active-menu-bar07-01 0.75s forwards;
+}
+@-webkit-keyframes active-menu-bar07-01 {
+    0% {
+        -webkit-transform: translateY(0) rotate(0);
+    }
+    50% {
+        -webkit-transform: translateY(12.7px) rotate(0);
+    }
+    100% {
+        -webkit-transform: translateY(12.7px) rotate(45deg);
+    }
+}
+@keyframes active-menu-bar07-01 {
+    0% {
+        transform: translateY(0) rotate(0);
+    }
+    50% {
+        transform: translateY(12.7px) rotate(0);
+    }
+    100% {
+        transform: translateY(12.7px) rotate(45deg);
+    }
+}
+.menu.active-7 span:nth-of-type(2) {
+    opacity: 0;
+}
+.menu.active-7 span:nth-of-type(3) {
+    -webkit-animation: active-menu-bar07-02 0.75s forwards;
+    animation: active-menu-bar07-02 0.75s forwards;
+}
+@-webkit-keyframes active-menu-bar07-02 {
+    0% {
+        -webkit-transform: translateY(0) rotate(0);
+    }
+    50% {
+        -webkit-transform: translateY(-12.7px) rotate(0);
+    }
+    100% {
+        -webkit-transform: translateY(-12.7px) rotate(-45deg);
+    }
+}
+@keyframes active-menu-bar07-02 {
+    0% {
+        transform: translateY(0) rotate(0);
+    }
+    50% {
+        transform: translateY(-12.7px) rotate(0);
+    }
+    100% {
+        transform: translateY(-12.7px) rotate(-45deg);
+    }
+}

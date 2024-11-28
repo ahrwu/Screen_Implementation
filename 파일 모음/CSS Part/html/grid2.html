@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            width: 700px;
+            margin: 20px auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, 100px);
+            gap: 20px;
+        }
+
+        .box {
+            text-align: center;
+            line-height: 100px;
+            font-size: 30px;
+            color: #fff;
+        }
+
+        .box1 {
+            background-color: #ffbe0b;
+            /* grid-column: 1 / 4; */
+            grid-column: 1 / -1;
+        }
+
+        .box2 {
+            background-color: #fb5607;
+            grid-row: 2 / 4;
+        }
+
+        .box3 {
+            background-color: #ff006e;
+            grid-column: 2 / 4;
+        }
+
+        .box4 {
+            background-color: #8338ec;
+        }
+
+        .box5 {
+            background-color: #3a86ff;
+        }
+
+        @media (max-width: 700px) {
+            .container {
+                display: block;
+                margin: 10px auto;
+            }
+
+            .box {
+                margin: 10px auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box box1">1</div>
+        <div class="box box2">2</div>
+        <div class="box box3">3</div>
+        <div class="box box4">4</div>
+        <div class="box box5">5</div>
+    </div>
+</body>
+
+</html>
