@@ -192,6 +192,8 @@ letter-spacing, word-spacing : 자간 조절
 - <b>letter-spacing : normal  |  <크기>;</b> (글자 간 간격 조절)
 - <b>word-spacing : normal  |  <크기>;</b> (단어 간 간격 조절)
 
+<h2>3. 목록(List)</h2>
+
 list-style-type : 불릿 모양과 번호 스타일 지정
 - disc : 채운 원 모양 ( ● )
 - circle : 빈 원 모양 ( ○ )
@@ -212,3 +214,16 @@ list-style-position : 목록 들여쓰기
 
 list-style : 목록 속성 한 번에 표시
 - <b>ex) list-style : decimal inside;</b>
+
+<h2>4. 표(Table)</h2>
+
+caption-side : 캡션 위치 조절
+- <b>caption-side : top(기본값)  |  bottom ;</b>
+- bottom을 활용하면 아래쪽에 표시 가능
+
+border-collapse : 표 테두리와 셀 테두리 분리 설정
+- <b>border-collapse : collapse  |  seperate(기본값) ;</b>
+- collapse을 사용하면 셀 테두리와 표 테두리를 합쳐 하나도 표시
+
+border-spacing : 셀 사이 여백 조절
+- <b>border-spacing : <수평거리> <수직거리> ;</b>
