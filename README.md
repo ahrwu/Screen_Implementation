@@ -191,3 +191,24 @@ text-decoration : 텍스트 밑줄, 취소선
 letter-spacing, word-spacing : 자간 조절
 - <b>letter-spacing : normal  |  <크기>;</b> (글자 간 간격 조절)
 - <b>word-spacing : normal  |  <크기>;</b> (단어 간 간격 조절)
+
+list-style-type : 불릿 모양과 번호 스타일 지정
+- disc : 채운 원 모양 ( ● )
+- circle : 빈 원 모양 ( ○ )
+- square : 채운 사각형 모양 ( ■ )
+- decimal : 1부터 시작하는 10진수 ( 1, 2, 3... )
+- decimal-leading-zero : 앞에 0이 붙는 10진수 ( 01, 02, 03... )
+- lower-roman : 로마 숫자 소문자 (ⅰ, ⅱ, ⅲ... )
+- upper-roman : 로마 숫자 대문자 (Ⅰ, Ⅱ, Ⅲ... )
+- lower-alpha 또는 lower-latin : 알파벳 소문자 ( a, b, c... )
+- upper-alpha 또는 upper-latin : 알파벳 대문자 ( A, B, C... )
+- none : 불릿이나 숫자 없음
+
+list-style-image : 불릿 대신 이미지 사용
+- <b>list-style-image : <url(이미지 파일 경로)>;</b>
+
+list-style-position : 목록 들여쓰기
+- <b>list-style-position : inside  |  outside(기본값);</b>
+
+list-style : 목록 속성 한 번에 표시
+- <b>ex) list-style : decimal inside;</b>
