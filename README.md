@@ -227,3 +227,147 @@ border-collapse : 표 테두리와 셀 테두리 분리 설정
 
 border-spacing : 셀 사이 여백 조절
 - <b>border-spacing : <수평거리> <수직거리> ;</b>
+
+<h2>5. 요소배치(Element Placement)</h2>
+
+display : 블록 레벨 요소, 인라인 레벨 요소를 바꿀 때 사용
+- <b>display : block  |  inline  |  inline-block  |  none ;</b>
+    - block : 인라인 요소를 블록 요소로 바꿈
+    - inline : 블록 요소를 인라인 요소로 바꿈
+    - inline-block : 인라인, 블록 요소의 속성을 모두 가지고 있으며 마진, 패딩 지정 가능
+    - none : 해당 요소를 화면에 표시하지 않음
+
+float : 요소를 왼쪽이나 오른쪽에 띄움(수평정렬)
+- <b>float : left  |  right  |  none ;</b>
+- 다른 요소에 영향을 주지 않으면서 자연스럽게 배치
+
+clear : float 속성 무효화
+- <b>clear : left  |  right  |  both ;</b>
+- float의 흐름을 무효화하고 다음 라인으로 이동하여 배치
+
+position : 웹 문서 내 요소 배치(x,y축)
+- <b>position : static(기본값)  |  relative  | absolute  |  fixed ;</b>
+    - <b>정적</b> 위치 지정 방식(static)
+        - 다른 태그와의 관계에 의해 자동으로 배치, 임의로 위치 지정 불가
+    - <b>상대</b> 위치 지정 방식(relative)
+        - 이전 요소에 자연스럽게 연결해 배치하되 위치 지정 가능
+    - <b>절대</b> 위치 지정 방식(absolute)
+        - 가장 가까운 relative 부모 요소를 기준으로 상하좌우 값으로 요소 배치
+        - 가까운 relative 속성을 가진 부모가 없으면 body를 기준으로 배치
+    - <b>고정</b> 위치 지정 방식(fixed)
+        - 다른 요소 상관없이 뷰포트 기준으로 특정 위치에 고정 배치
+        - 스크롤해도 움직이지 않음
+
+z-index : 우선순위에 따라 화면 전면 배치(z축)
+- <b>z-index : <숫자>  |  auto(기본값) ;</b>
+    - 숫자가 클 수록 전면으로 배치
+    - position이 static인 요소에는 적용 불가
+
+overflow : 자식 요소가 부모 요소를 벗어났을 때 처리 방법
+- <b>overflow : visible(기본값)  |  hidden  |  scroll  |  auto ;</b>
+    - visible : 부모 영역 벗어난 부분 표시
+    - hidden : 부모 영역 벗어난 부분 잘라냄
+    - scroll : 부모 영역 벗어난 부분 상관없이 스크롤 표시
+    - auto : 부모 영역 벗어난 부분 있을 때만 스크롤 표시
+
+<h2>6. 미디어 쿼리(Midea Query)</h2>
+
+- 서로 다른 미디어 타입에 따라 각기 다른 스타일을 적용할 수 있는 기능
+- 반응형 웹의 핵심 기능은 @media 를 사용하는 것 ! (<style>~</style> 사이 위치)
+- @media [ only  |  not ] 미디어 유형 [ and 미디어 조건 ] … { CSS 요소 }
+    - 미디어 유형 : all, screen(브라우저 화면), print(프린트 화면), speech(음성), tv, handheld, projection 등
+        - 미디어 조건
+            - width, height : 웹페이지의 가로 너비, 세로 높이
+            - min-width, min-height : 웹페이지의 최소 너비, 최소 높이
+            - max-width, max-height : 웹페이지의 최대 너비, 최대 높이
+            - device-width, device-height : 디바이스의 물리적 너비, 높이 (단위 : px)
+            - orientation : 디바이스 방향 (가로 방향 - landscape / 세로 방향 - portrait)
+
+<h2>7. 플렉스박스(Flex Box)</h2>
+
+플렉스 박스 레이아웃
+- 기본적으로 웹 요소를 가로로 배치하다가 화면에 가득 차면 아래로 내려서 다시 옆으로 배치하는 방식
+- 여유 공간에 따라 너비나 높이, 위치를 자유롭게 변형할 수 있음
+- 플렉스 컨테이너(부모 박스)
+    - 플렉스 박스 레이아웃을 적용할 대상을 묶는 요소
+- 플렉스 항목(자식 박스)
+    - 플렉스 박스 레이아웃을 적용할 대상으로, 1~6까지 작은 박스들이 모두 해당
+- 주축(main axis)
+    - 플렉스 컨테이너 안에서 플렉스 항목을 배치하는 기본 방향
+    - 왼쪽에서 오른쪽으로 수평 방향으로 배치
+- 교차축(cross axis)
+    - 주축으로 배치하다가 끝점까지 닿았을 때 어떻게 배치할 지 결정하는 속성
+    - 위에서 아래로 배치
+
+flex-direction : 주축과 방향을 지정하는 속성
+- row : 주축을 가로로 지정, 왼 → 오 정렬 (기본값)
+- row-reverse : 주축을 가로로 지정, 오 → 왼 정렬
+- column : 주축을 세로로 지정, 위 → 아래 정렬
+- column-reverse : 주축을 세로로 지정, 아래 → 위 정렬
+
+flex-wrap : 플렉스 컨테이너 너비보다 플렉스 항목이 많은 경우 줄바꿈 여부
+- nowrap : 플렉스 항목을 한 줄로 표시함 (기본값)
+- wrap : 플렉스 항목을 여러 줄로 표시
+- wrap-reverse : 플렉스 항목을 여러 줄로 표시하되, 교차축의 시작점과 끝점이 바뀜
+
+flex-flow : flex-direction + flex-flow 속성 한꺼번에 지정 (기본값 : row wrap /* 왼쪽에서 오른쪽, 여러 줄 */)
+
+justify-content : 주축에서 플렉스 항목 간의 정렬 방법 지정
+- flex-start : 주축의 시작점에 맞춰 정렬(기본값)
+- flex-end : 주축의 끝점에 맞춰 정렬
+- center : 주축의 중앙에 맞춰 정렬
+- space-around : 항목을 고르게 정렬, 각 항목은 양쪽 여백의 절반만큼 자리 차지
+- space-between : 첫 번째 항목은 주축 시작점에, 마지막 항목은 주축 끝점에 배치한 후 나머지 항목은 같은 간격으로 정렬
+- space-evenly : 항목을 고르게 정렬, 각 항목의 여백은 모두 동일
+
+align-items : 교차축의 정렬 방법 지정
+- flex-start : 교차축의 시작점에 맞춰 정렬
+- flex-end : 교차축의 끝점에 맞춰 정렬
+- center : 교차축의 중앙에 맞춰 정렬
+- baseline : 교차축의 문자 기준선에 맞춰 정렬
+- stretch : 플렉스 항목을 늘려 교차축에 가득 차게 정렬(기본값)
+
+align-content : 여러 줄일 때 교차축 정렬 방법 지정
+- flex-start : 교차축의 시작점에 맞춰 정렬
+- flex-end : 교차축의 끝점에 맞춰 정렬
+- center : 교차축의 중앙에 맞춰 정렬
+- space-between : 첫 번째 항목과 끝 항목을 교차축의 시작점과 끝점에 맞추고, 나머지 항목은 그 사이 같은 간격으로 정렬
+- space-around : 모든 항목을 교차축에 같은 간격으로 정렬
+- stretch : 플렉스 항목을 늘려 교차축에 가득 차게 정렬(기본값)
+
+<h2>8. 그리드 레이아웃(Grid Layout)</h2>
+
+그리드 레이아웃
+- 플렉스 박스 레이아웃은 주축/교차축 개념이 있지만 CSS 그리드 레이아웃은 양쪽 방향 모두 사용<br>
+    → 플렉스 그리드 레이아웃은 1차원, CSS 그리드 레이아웃은 2차원
+- 행(row)과 열(column)로 화면을 구성하고, 필요할 경우 그리드 항목 사이에 간격을 둘 수 있음
+
+grid-template-columns, grid-template-rows : 열과 행의 크기와 개수 지정
+
+grid-auto-rows : 동적으로 만들어진 행의 높이 지정
+
+repeat() : 값이 반복될 때 줄여서 표현할 수 있는 함수
+
+minmax() : 최솟값과 최댓값을 지정하는 함수
+
+auto-fit, auto-fill : 빈 공간을 자동으로 채움
+- 열의 개수를 지정하는 대신 auto-fit이나 auto-fill을 지정하면 화면 너비에 따라 행을 채움.
+    - auto-fit : 남는 공간 없이 꽉 채우기(컨테이너 너비 가득 채움)
+    - auto-fill : 열 최소 너비까지만 표시하고 남는 공간은 그대로 둠
+
+gap : 그리드 항목의 간격 조절
+
+그리드 라인
+- grid-column-start : 열의 시작 번호를 지정 (<b>grid-column-start: 1;</b>)
+- grid-column-end : 열의 끝 번호를 지정 (<b>grid-column-end: 4;</b>)
+- grid-column : 열의 시작과 끝 번호를 함께 지정, /로 구분 (<b>grid-column: 1 / 4;</b>)
+- grid-row-start : 행의 시작 번호를 지정 (<b>grid-row-start: 2;</b>)
+- grid-row-end : 행의 끝 번호를 지정 (<b>grid-row-end: 4;</b>)
+- grid-row : 행의 시작과 끝 번호를 함께 지정, /로 구분 (<b>grid-row: 2 / 4;</b>)
+
+탬플릿 영역
+ex)
+grid-template-areas:
+    "gird1 grid2 grid2"
+    "grid1 grid2 grid3"
+    "grid4 grid5 grid6";
