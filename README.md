@@ -152,7 +152,8 @@ ex)
 <h1>CSS</h1><br>
 
 <h2>1. 기본(basic)</h2>
-선택자<br>
+
+선택자
 - class와 id의 공통점<br>
     - 특정 부분만 선택해서 스타일 적용<br>
 - class와 id의 차이점<br>
@@ -165,4 +166,15 @@ ex)
 
 <h2>2. 텍스트(Text)</h2>
 
+text-align : 텍스트 정렬
+- <b>text-align : start | end | left | right | center | justify | match-parent ;</b>
+    - left : 왼쪽에 맞추어 문단 정렬
+    - right : 오른쪽에 맞추어 문단 정렬
+    - center : 가운데에 맞추어 문단 정렬
+    - justify : 양쪽에 맞추어 문단 정렬
+    - start : 현재 텍스트 줄의 시작 위치에 맞추어 문단을 정렬
+    - end : 현재 텍스트 줄의 끝 위치에 맞추어 문단을 정렬
+    - match-parent : 부모 요소에 따라 문단 정렬
 
+line-height : 줄 간격 조절
+- line-height: <숫자>  |  <백분율>;
