@@ -154,14 +154,14 @@ ex)
 <h2>1. 기본(basic)</h2>
 
 선택자
-- class와 id의 공통점<br>
-    - 특정 부분만 선택해서 스타일 적용<br>
-- class와 id의 차이점<br>
-    - class<br>
-        - 문서에 여러 번 적용 가능<br>
-        - 같은 태그라도 다른 스타일 적용하고 싶을 때 주로 사용<br>
-    - id<br>
-        - 문서에 한 번 적용 가능<br>
+- class와 id의 공통점
+    - 특정 부분만 선택해서 스타일 적용
+- class와 id의 차이점
+    - class
+        - 문서에 여러 번 적용 가능
+        - 같은 태그라도 다른 스타일 적용하고 싶을 때 주로 사용
+    - id
+        - 문서에 한 번 적용 가능
         - 문서의 레이아웃과 관련된 스타일을 지정하거나 웹 요소에 자바스크립트 프로그램을 사용하면서 요소 구별할 때 사용<br><br>
 
 <h2>2. 텍스트(Text)</h2>
@@ -177,4 +177,17 @@ text-align : 텍스트 정렬
     - match-parent : 부모 요소에 따라 문단 정렬
 
 line-height : 줄 간격 조절
-- line-height: <숫자>  |  <백분율>;
+- <b>line-height: <숫자>  |  <백분율></b>;
+
+text-shadow : 텍스트 그림자
+- <b>text-shadow: none  |  <가로 거리> <세로 거리> <번짐 정도> <색상></b>;
+
+text-transform : 영문 텍스트의 대소문자 변환
+- <b>text-transform : none  |  capitalize  |  uppercase  |  lowercase  |  full-width;</b>
+
+text-decoration : 텍스트 밑줄, 취소선
+- <b>text-decoration : none  |  underline  |  overline  | line-through;</b>
+
+letter-spacing, word-spacing : 자간 조절
+- <b>letter-spacing : normal  |  <크기>;</b> (글자 간 간격 조절)
+- <b>word-spacing : normal  |  <크기>;</b> (단어 간 간격 조절)
