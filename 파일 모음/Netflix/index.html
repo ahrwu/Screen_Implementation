@@ -5,29 +5,157 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>넷플릭스 대한민국</title>
-    <script src="https://kit.fontawesome.com/d8e16cb6e9.js" crossorigin="anonymous"></script>
-    <!-- 팝잇콘 -->
-    <link rel="icon" href="./img/symbol.png">
-    <link rel="apple-touch-icon" href="./img/symbol.png"> <!-- 사파리에서 작동 -->
-    <link rel="stylesheet" href="index.css">
+    <link rel="icon" href="./img/symbol.png" />
+    <link rel="apple-touch-icon" href="./img/symbol.png" />
+    <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/section-1.css">
+    <link rel="stylesheet" href="./css/section-2.css">
+    <link rel="stylesheet" href="./css/footer.css">
+    <script src="https://kit.fontawesome.com/d8a8fbd428.js" crossorigin="anonymous"></script>
+
 </head>
 
 <body>
+    <!-- 헤더 -->
     <header>
         <nav>
             <img class="logo" src="./img/logo.png" alt="넷플릭스 로고">
             <div>
                 <button class="lang">
-                    <i class="fa-solid fa-globe"></i>
-                    한국어
+                    <i class="fa-solid fa-globe"></i> 한국어
                     <i class="fa-solid fa-caret-down"></i>
                 </button>
-                <button class="login">
-                    로그인
-                </button>
+                <button class="login">로그인</button>
             </div>
         </nav>
+
+        <div class="header-content">
+            <h2>영화, 시리즈 등을 무제한으로</h2>
+            <h3>시청할 준비가 되셨나요? <br>
+                멤버십을 등록하거나 재시작하려면 이메일 주소를 입력하세요.
+            </h3>
+            <div class="email">
+                <form class="add-email">
+                    <input type="email" placeholder="이메일 주소" required>
+                    <button type="submit">시작하기</button>
+                </form>
+                <form class="add-email-2">
+                    <button>로그인</button>
+                    <button>이메일 입력</button>
+                </form>
+            </div>
+        </div>
     </header>
+    
+    <!-- 섹션1: 지금 뜨는 콘텐츠 -->
+    <section id="choice">
+        <h2>지금 뜨는 콘텐츠</h2>
+        <div class="section-container">
+            <i class="fa-solid fa-angle-left arrow left" style="color: #ffffff;"></i>
+            <div class="choice-container">
+                <div class="slide-container">
+                    <div class="content-container">
+                        <img src="./img/poster-1.jpg" alt="">
+                        <div class="content-info">
+                            <div class="content-name">강철부대W</div>
+                            <div class="content-age">15세 이상</div>
+                            <div class="content-message">
+                                최초로 펼쳐지는 여성 군인들만의 정면 대결. <br>
+                                최정예 특수 부대 출신 여성 대원들이 최고의 자리를 차지하기 위해 치열한 경쟁에 돌입한다.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content-container">
+                        <img src="./img/poster-2.jpg" alt="">
+                        <div class="content-info">
+                            <div class="content-name">흑백요리사</div>
+                            <div class="content-age">12세 이상</div>
+                            <div class="content-message">
+                                맛 하나는 최고라고 평가받는 재야의 고수 '흑수저'<br>
+                                80인이 대한민국 최고의 스트 셰프 '백수저' 20인에게 도전장을 내민다.<br>
+                                오직 맛으로 승부를 걸며 치열하게 맞붙는 100인의 요리 계급 전쟁.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content-container">
+                        <img src="./img/poster-3.jpg" alt="">
+                        <div class="content-info">
+                            <div class="content-name">경성크리처</div>
+                            <div class="content-age">15세 이상</div>
+                            <div class="content-message">
+                                서울, 경성의 봄을 살아낸 채옥이 태상의 모든 것을 닮은 호재를 만난다.<br>
+                                끝나지 않은 경성의 인연과 악연. 이번에는 어떤 운명이 두 사람을 기다리고 있을까
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <i class="fa-solid fa-angle-right arrow right" style="color: #ffffff;"></i>
+        </div>
+    </section>
+
+    <script>
+        const container = document.querySelector('.slide-container');
+        const slides = document.querySelectorAll('.content-container')
+        let currentIndex = 0;
+        const totalSlides = slides.length;
+
+        // 왼쪽 화살표 클릭 시 이전 슬라이드로 이동
+        document.querySelector('.arrow.left').addEventListener('click', function() {
+            if(currentIndex > 0) {
+                currentIndex--;
+            } else {
+                currentIndex = totalSlides - 1;
+            }
+            updateSlide();
+        })
+
+        // 오른쪽 화살표 클릭 시 다음 슬라이드로 이동
+        document.querySelector('.arrow.right').addEventListener('click', function () {
+            if (currentIndex < totalSlides-1) { // 슬라이드 개수에 맞게 수정 (0부터 시작하므로 마지막 인덱스는 1)
+                currentIndex++;
+            } else {
+                currentIndex = 0;
+            }
+            updateSlide();
+        });
+
+        // 슬라이드 이동 함수
+        function updateSlide() {
+            container.style.transform = `translateX(-${currentIndex * 70}vw)`;
+        }
+    </script>
+
+    <!-- 섹션2: FAQ영역 -->
+    <section id="faq">
+        <h2>자주하는 질문과 답변</h2>
+        <div class="accordion">
+            <div class="question">
+                <input type="radio" name="accordion" id="first">
+                <label for="first">넷플릭스에서 어떤 콘텐츠를 시청할 수 있나요?</label>
+                <p class="answer">넷플릭스는 장편 영화, 다큐멘터리, 시리즈, 애니메이션, 각종 상을 수상한 넷플릭스 오리지널 등 수많은 
+                        콘텐츠를 확보하고 있습니다. 마음에 드는 콘텐츠를 원하는 시간에 원하는 만큼 시청하실 수 있습니다. </p>
+                
+            </div>
+
+            <div class="question">
+                <input type="radio" name="accordion" id="second">
+                <label for="second">요금은 얼마인가요?</label>
+                <p class="answer">스마트폰, 태블릿, 스마트 TV, 노트북, 스트리밍 디바이스 등 다양한 디바이스에서 
+                    월정액 요금 하나로 넷플릭스를 시청하세요. 멤버십 요금은 월 5,500원부터 17,000원까지 다양합니다.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 푸터 -->
+    <footer>
+        <h4>넷플릭스 대한민국</h4>
+        <div class="footer-text">
+            <p>넷플릭스서비시스코리아 유한회사 통신판매업신고번호: 제2018-서울종로-0426호 전화번호: 00-308-321-0161 (수신자 부담)</p>
+            <p>대표: 레지널드 숀 톰프슨</p>
+            <p>클라우드 호스팅: Amazon Web Services Inc.</p>
+        </div>
+    </footer>
 </body>
 
 </html>

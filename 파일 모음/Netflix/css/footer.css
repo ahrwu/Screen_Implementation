@@ -1,0 +1,15 @@
+footer {
+    padding : 10px 8%;
+    margin: 50px 0;
+}
+
+footer .footer-text{
+    margin: 20px 0;
+}
+
+footer p {
+    font-size: 14px;
+    line-height: 0.6;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 10px;
+}

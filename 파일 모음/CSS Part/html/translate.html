@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            float: left;
+            width: 150px;
+            height: 150px;
+            border: 1px solid black;
+            margin-top: 100px;
+            margin-left: 80px;
+        }
+
+        .box>div {
+            width: 150px;
+            height: 150px;
+            background-color: orange;
+            transition: 0.75s ease;
+        }
+
+        /* .translatex:hover {
+            transform: translateX(50px);
+            transition: 0.75s ease;
+        }
+
+        .translatey:hover {
+            transform: translateY(50px);
+            transition: 0.75s ease;
+        }
+
+        .translate:hover {
+            transform: translate(30px, 30px);
+            transition: 0.75s ease;
+        } */
+
+        /* .scalex:hover {
+            transform: scaleX(1.5);
+        }
+
+        .scaley:hover {
+            transform: scaleY(2);
+        }
+
+        .scale:hover {
+            transform: scale(0.7);
+        } */
+
+        .container {
+            width: 400px;
+            height: 168px;
+            border: 1px solid black;
+            margin: 100px;
+            perspective: 100px;
+        }
+
+        img {
+            width: 400px;
+            background-color: black;
+            transition: 0.75s ease-in;
+        }
+
+        /* img:hover {
+            transform: skew(45deg, 45deg);
+        } */
+
+        img:hover {
+            transform: rotatex(180deg);
+
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <div class="box">
+        <div class="translatex"></div>
+    </div>
+    <div class="box">
+        <div class="translatey"></div>
+    </div>
+    <div class="box">
+        <div class="translate"></div>
+    </div> -->
+    <!-- <div class="box">
+        <div class="scalex"></div>
+    </div>
+    <div class="box">
+        <div class="scaley"></div>
+    </div>
+    <div class="box">
+        <div class="scale"></div>
+    </div> -->
+    <div class="container">
+        <img src="https://img1.daumcdn.net/thumb/R1280x0/?fname=http://t1.daumcdn.net/brunch/service/user/7A3i/image/dBIm_1leVancF0c3fqRl-Vbx7fY.jpg"
+            alt="">
+    </div>
+</body>
+
+</html>

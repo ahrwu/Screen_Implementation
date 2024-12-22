@@ -7,11 +7,13 @@
 .hidden {
     visibility: hidden;
     opacity: 0;
+    transition: 0.5s ease;
 }
 
 .visible {
     visibility: visible;
     opacity: 1;
+    transition: 0.5s ease;
 }
 
 body {
@@ -26,27 +28,8 @@ body {
     justify-content: space-around;
     align-items: center;
 }
-/* .hover-trigger {
-    background-color: #fff;
-    width: 100%;
-    height: 50px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 999;
-}
-.hover-trigger:hover + header {
-    transform: translateY(0);
-} */
 header {
-    background: linear-gradient(
-        to right,
-        #cdb4db,
-        #ffafcc,
-        #ffc8dd,
-        #bde0fe,
-        #a2d2ff
-    );
+    background-color: white;
     display: flex;
     position: fixed;
     top: 0;
@@ -55,13 +38,18 @@ header {
     height: 50px;
     align-items: center;
     justify-content: right;
-    border-bottom: 1px solid black;
+    border-bottom: 2px solid black;
     z-index: 1000;
-    /* transform: translateY(-100%);
-    -webkit-transition: 0.75s ease;
-    transition: 0.75s ease; */
 }
-header div {
+
+nav {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+nav a {
     margin-right: auto;
     /* 드래그 방지 */
     -webkit-user-select: none;
@@ -79,75 +67,65 @@ header div {
     text-decoration-line: none;
 }
 
-nav {
+.menu-data {
+    width: 150px;
+    height: 100px;
     position: relative;
-    background-color: #e5e5e5;
-    top: 110.8px;
-    left: 70px;
-    width: 110px;
-    height: 110px;
-    padding: 20px;
-    border: 1px solid black;
-    transition: opacity 0.5s ease, visibility 0.5s ease;
-}
-nav:before {
-    content: "";
-    position: absolute;
-    top: -18px;
-    left: calc(65% - 17px);
-    border-left: 21px solid transparent;
-    border-right: 21px solid transparent;
-    border-bottom: 18px solid black;
-}
-nav:after {
-    content: "";
-    position: absolute;
-    top: -16.4px;
-    left: calc(65% - 16.5px);
-    border-left: 20px solid transparent;
-    border-right: 20px solid transparent;
-    border-bottom: 17px solid #e5e5e5;
-}
-
-main {
-    background-color: #87ceeb;
-    /* border-radius: 15px; */
-    display: flex;
-    width: 65vw;
-    height: 60vh;
-}
-
-.present {
-    background-color: #e2bd88;
-    width: 35%;
-    height: 100%;
-}
-
-.time {
+    right: -70px;
+    top: 75px;
     background-color: #fff;
-    width: 65%;
-    height: 100%;
+    outline: 2px solid #000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    color: #333;
+}
+.menu-data::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: 67.2%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid #000;
+}
+.menu-data a {
+    position: relative;
+    top: 13px;
+    left: 15px;
+    margin-bottom: 5px;
+    color: black;
+    text-decoration-line: none;
+}
+.menu-data a:hover {
+    color: #00aaff;
 }
 
 .menu {
-    display: flex; /* 햄버거 메뉴를 플렉스 컨테이너로 설정 */
-    flex-direction: column; /* 세로 방향으로 정렬 */
-    justify-content: space-between; /* 막대 사이 간격 균등 */
-    width: 40px; /* 메뉴 버튼의 너비 */
-    cursor: pointer; /* 클릭 가능하도록 포인터 변경 */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 40px;
+    cursor: pointer;
     position: relative;
     margin-right: 30px;
-    display: flex; /* 필요한 경우 추가 요소를 위한 플렉스 컨테이너 */
-    align-items: center; /* 세로 가운데 정렬 */
-    height: 60%; /* 오른쪽 여백 */
+    display: flex;
+    align-items: center;
+    height: 60%;
 }
 
 .menu span {
-    display: block; /* 막대를 블록 요소로 설정 */
-    width: 100%; /* 부모 요소 너비에 맞춤 */
-    height: 5px; /* 막대 두께 */
-    background-color: black; /* 막대 색상 */
-    border-radius: 2px; /* 약간 둥근 모서리 */
+    display: block;
+    width: 100%;
+    height: 5px;
+    background-color: black;
+    border-radius: 2px;
 }
 
 /* type-07 */
@@ -261,5 +239,549 @@ main {
     }
     100% {
         transform: translateY(-12.7px) rotate(-45deg);
+    }
+}
+
+main {
+    background-color: #87ceeb;
+    display: flex;
+    width: 70vw;
+    height: 70vh;
+}
+
+.present {
+    background-color: #e2bd88;
+    width: 35%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* 드래그 방지 */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.present #now {
+    position: relative;
+    text-align: start;
+}
+.present #now .now {
+    margin-left: 8%;
+}
+.present div {
+    width: 100%;
+    font-family: "Open Sans", sans-serif;
+    color: white;
+    text-align: center;
+}
+.weather-icon {
+    position: relative;
+    bottom: 20px;
+    color: #fff;
+    padding: 20px;
+}
+.present .details {
+    width: auto;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
+.present .details i {
+    margin-bottom: 5px;
+}
+.present #details {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.present div h1 {
+    font-style: italic;
+    font-weight: 100;
+    font-size: 80px;
+    margin-bottom: 10px;
+}
+.present div p {
+    font-size: 20px;
+    margin: 5px 0;
+}
+.present div span {
+    font-size: 15px;
+    font-weight: 700;
+}
+
+#threehour {
+    background-color: #fff;
+    width: 65%;
+    height: 100%;
+}
+#threehour h2 {
+    position: relative;
+    left: 10px;
+}
+.threehour {
+    height: 92.2%;
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    scrollbar-color: none;
+    align-items: center;
+}
+.card {
+    flex: 0 0 auto;
+    width: 100px;
+    text-align: center;
+    padding: 10px;
+}
+.card:nth-child(1) {
+    margin-left: 15px;
+}
+.card .icon {
+    margin: 5px 0;
+    font-size: 10px;
+}
+.card .time,
+.card .temperature,
+.card .description {
+    margin: 5px 0;
+}
+
+footer {
+    position: fixed;
+    display: flex;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    height: 10px;
+    background-color: #222;
+    color: #fff;
+    text-align: center;
+    align-items: center;
+    padding: 20px 10px;
+}
+
+.footer-content {
+    font-size: 12px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-content p a {
+    text-decoration-line: none;
+    color: #fff;
+}
+
+.footer-content p a:hover {
+    color: #00aaff;
+}
+
+/* 모바일 */
+@media (max-width: 600px) {
+    header {
+        height: 40px;
+        width: 100vw;
+    }
+
+    .logo {
+        font-size: 16px;
+        margin-left: 15px;
+    }
+
+    .menu-data {
+        width: 120px;
+        top: 80px;
+    }
+    .menu-data::before {
+        left: 58.8%;
+    }
+
+    main {
+        display: flex;
+        flex-direction: column;
+        width: 100vw;
+        height: calc(100vh - 60px - 10px);
+    }
+
+    section {
+        flex-direction: column;
+        padding: 0;
+    }
+
+    .present {
+        flex-direction: row;
+        position: relative;
+        top: 5.3px;
+        width: 100%;
+        height: 60%;
+    }
+    .present #now {
+        position: relative;
+        bottom: 70px;
+        width: auto;
+        text-align: start;
+    }
+    .present #now .now {
+        margin-left: 8%;
+    }
+    .present div {
+        width: 100%;
+        font-family: "Open Sans", sans-serif;
+        color: white;
+        text-align: center;
+    }
+    .weather-icon {
+        position: relative;
+        bottom: 20px;
+        width: 0;
+        padding: 0;
+        padding-left: 10px;
+        color: #fff;
+    }
+    .present .details {
+        width: auto;
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: column;
+    }
+    .present .details i {
+        margin-bottom: 5px;
+    }
+    .present #details {
+        width: 170px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+    .present div h1 {
+        font-style: italic;
+        font-weight: 100;
+        font-size: 80px;
+        margin-bottom: 10px;
+    }
+    .present div p {
+        font-size: 20px;
+        margin: 5px 0;
+    }
+    .present div span {
+        font-size: 15px;
+        font-weight: 700;
+    }
+
+    #threehour {
+        background-color: #fff;
+        width: 100%;
+        height: 100%;
+    }
+    #threehour h2 {
+        position: relative;
+        width: 270px;
+        left: 10px;
+    }
+    .threehour {
+        height: 80%;
+        display: flex;
+        gap: 10px;
+        overflow-x: auto;
+        scrollbar-color: none;
+        align-items: center;
+    }
+    .card {
+        flex: 0 0 auto;
+        width: 100px;
+        text-align: center;
+        padding: 10px;
+    }
+    .card:nth-child(1) {
+        margin-left: 15px;
+    }
+    .card .icon {
+        margin: 5px 0;
+        font-size: 10px;
+    }
+    .card .time,
+    .card .temperature,
+    .card .description {
+        margin: 5px 0;
+    }
+
+    footer {
+        height: 20px;
+        width: 100vw;
+    }
+
+    .footer-content {
+        font-size: 10px;
+    }
+
+    /* type-07 */
+    /* 라인이 하나로 합쳐졌다가 엑스자 만들기 */
+    .menu-trigger.type7 span:nth-of-type(1) {
+        -webkit-animation: menu-bar07-01 0.75s forwards;
+        animation: menu-bar07-01 0.75s forwards;
+    }
+    @-webkit-keyframes menu-bar07-01 {
+        0% {
+            -webkit-transform: translateY(12px) rotate(45deg);
+        }
+        50% {
+            -webkit-transform: translateY(12px) rotate(0);
+        }
+        100% {
+            -webkit-transform: translateY(0) rotate(0);
+        }
+    }
+    @keyframes menu-bar07-01 {
+        0% {
+            transform: translateY(12px) rotate(45deg);
+        }
+        50% {
+            transform: translateY(12px) rotate(0);
+        }
+        100% {
+            transform: translateY(0) rotate(0);
+        }
+    }
+    .menu-trigger.type7 span:nth-of-type(2) {
+        transition: all 0.25s 0.25s;
+        opacity: 1;
+    }
+    .menu-trigger.type7 span:nth-of-type(3) {
+        -webkit-animation: menu-bar07-02 0.75s forwards;
+        animation: menu-bar07-02 0.75s forwards;
+    }
+    @-webkit-keyframes menu-bar07-02 {
+        0% {
+            -webkit-transform: translateY(-12px) rotate(-45deg);
+        }
+        50% {
+            -webkit-transform: translateY(-12px) rotate(0);
+        }
+        100% {
+            -webkit-transform: translateY(0) rotate(0);
+        }
+    }
+    @keyframes menu-bar07-02 {
+        0% {
+            transform: translateY(-12px) rotate(-45deg);
+        }
+        50% {
+            transform: translateY(-12px) rotate(0);
+        }
+        100% {
+            transform: translateY(0) rotate(0);
+        }
+    }
+    .menu-trigger.active-7 span:nth-of-type(1) {
+        -webkit-animation: active-menu-bar07-01 0.75s forwards;
+        animation: active-menu-bar07-01 0.75s forwards;
+    }
+    @-webkit-keyframes active-menu-bar07-01 {
+        0% {
+            -webkit-transform: translateY(0) rotate(0);
+        }
+        50% {
+            -webkit-transform: translateY(12px) rotate(0);
+        }
+        100% {
+            -webkit-transform: translateY(12px) rotate(45deg);
+        }
+    }
+    @keyframes active-menu-bar07-01 {
+        0% {
+            transform: translateY(0) rotate(0);
+        }
+        50% {
+            transform: translateY(12px) rotate(0);
+        }
+        100% {
+            transform: translateY(12px) rotate(45deg);
+        }
+    }
+    .menu-trigger.active-7 span:nth-of-type(2) {
+        opacity: 0;
+    }
+    .menu-trigger.active-7 span:nth-of-type(3) {
+        -webkit-animation: active-menu-bar07-02 0.75s forwards;
+        animation: active-menu-bar07-02 0.75s forwards;
+    }
+    @-webkit-keyframes active-menu-bar07-02 {
+        0% {
+            -webkit-transform: translateY(0) rotate(0);
+        }
+        50% {
+            -webkit-transform: translateY(-12px) rotate(0);
+        }
+        100% {
+            -webkit-transform: translateY(-12px) rotate(-45deg);
+        }
+    }
+    @keyframes active-menu-bar07-02 {
+        0% {
+            transform: translateY(0) rotate(0);
+        }
+        50% {
+            transform: translateY(-12px) rotate(0);
+        }
+        100% {
+            transform: translateY(-12px) rotate(-45deg);
+        }
+    }
+}
+
+/* 태블릿 */
+@media (max-width: 1024px) and (min-width: 601px) {
+    header {
+        height: 45px;
+    }
+
+    .logo {
+        font-size: 18px;
+    }
+
+    .menu-data {
+        width: 130px;
+        top: 70px;
+    }
+    .menu-data::before {
+        left: 62%;
+    }
+
+    main {
+        width: 80vw;
+        height: 55vh;
+    }
+
+    .present {
+        top: 0;
+        padding-top: 10px;
+        font-size: xx-small;
+    }
+    .present div h1 {
+        margin-bottom: 0;
+    }
+    .present div p {
+        margin-top: 0;
+    }
+
+    footer {
+        height: 50px;
+    }
+
+    .footer-content {
+        font-size: 11px;
+    }
+    /* type-07 */
+    /* 라인이 하나로 합쳐졌다가 엑스자 만들기 */
+    .menu-trigger.type7 span:nth-of-type(1) {
+        -webkit-animation: menu-bar07-01 0.75s forwards;
+        animation: menu-bar07-01 0.75s forwards;
+    }
+    @-webkit-keyframes menu-bar07-01 {
+        0% {
+            -webkit-transform: translateY(10.5px) rotate(45deg);
+        }
+        50% {
+            -webkit-transform: translateY(10.5px) rotate(0);
+        }
+        100% {
+            -webkit-transform: translateY(0) rotate(0);
+        }
+    }
+    @keyframes menu-bar07-01 {
+        0% {
+            transform: translateY(10.5px) rotate(45deg);
+        }
+        50% {
+            transform: translateY(10.5px) rotate(0);
+        }
+        100% {
+            transform: translateY(0) rotate(0);
+        }
+    }
+    .menu-trigger.type7 span:nth-of-type(2) {
+        transition: all 0.25s 0.25s;
+        opacity: 1;
+    }
+    .menu-trigger.type7 span:nth-of-type(3) {
+        -webkit-animation: menu-bar07-02 0.75s forwards;
+        animation: menu-bar07-02 0.75s forwards;
+    }
+    @-webkit-keyframes menu-bar07-02 {
+        0% {
+            -webkit-transform: translateY(-10.5px) rotate(-45deg);
+        }
+        50% {
+            -webkit-transform: translateY(-10.5px) rotate(0);
+        }
+        100% {
+            -webkit-transform: translateY(0) rotate(0);
+        }
+    }
+    @keyframes menu-bar07-02 {
+        0% {
+            transform: translateY(-10.5px) rotate(-45deg);
+        }
+        50% {
+            transform: translateY(-10.5px) rotate(0);
+        }
+        100% {
+            transform: translateY(0) rotate(0);
+        }
+    }
+    .menu-trigger.active-7 span:nth-of-type(1) {
+        -webkit-animation: active-menu-bar07-01 0.75s forwards;
+        animation: active-menu-bar07-01 0.75s forwards;
+    }
+    @-webkit-keyframes active-menu-bar07-01 {
+        0% {
+            -webkit-transform: translateY(0) rotate(0);
+        }
+        50% {
+            -webkit-transform: translateY(10.5px) rotate(0);
+        }
+        100% {
+            -webkit-transform: translateY(10.5px) rotate(45deg);
+        }
+    }
+    @keyframes active-menu-bar07-01 {
+        0% {
+            transform: translateY(0) rotate(0);
+        }
+        50% {
+            transform: translateY(10.5px) rotate(0);
+        }
+        100% {
+            transform: translateY(10.5px) rotate(45deg);
+        }
+    }
+    .menu-trigger.active-7 span:nth-of-type(2) {
+        opacity: 0;
+    }
+    .menu-trigger.active-7 span:nth-of-type(3) {
+        -webkit-animation: active-menu-bar07-02 0.75s forwards;
+        animation: active-menu-bar07-02 0.75s forwards;
+    }
+    @-webkit-keyframes active-menu-bar07-02 {
+        0% {
+            -webkit-transform: translateY(0) rotate(0);
+        }
+        50% {
+            -webkit-transform: translateY(-10.5px) rotate(0);
+        }
+        100% {
+            -webkit-transform: translateY(-10.5px) rotate(-45deg);
+        }
+    }
+    @keyframes active-menu-bar07-02 {
+        0% {
+            transform: translateY(0) rotate(0);
+        }
+        50% {
+            transform: translateY(-10.5px) rotate(0);
+        }
+        100% {
+            transform: translateY(-10.5px) rotate(-45deg);
+        }
     }
 }

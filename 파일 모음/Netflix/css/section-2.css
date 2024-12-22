@@ -1,0 +1,59 @@
+#faq{
+    margin: 20px auto;
+    padding : 10px 8%;
+    overflow: hidden;
+}
+
+#faq .accordion{
+    width: 100%;
+    max-width: 70vw;
+    margin: 30px auto;
+}
+
+.question{
+    margin-bottom: 10px;
+}
+
+.question label{
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    font-size: 25px;
+    background: #303030;
+    cursor: pointer;
+    position: relative;
+}
+
+.answer {
+    background: #3b3b3b;
+    font-size: 22px;
+    padding: 0 20px;
+    max-height: 0;
+    overflow: hidden;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 0.3s;
+}
+
+.question label::after{
+    content: '\2b';
+    font-size: 40px;
+    position: absolute;
+    top: 5%;
+    right: 20px;
+}
+
+.accordion input[type="radio"]:checked + label::after{
+    content: '×';
+}
+
+.accordion input[type="radio"]{
+    display: none;
+}
+
+.accordion input[type="radio"]:checked + label + .answer{
+    max-height: none;
+    height: auto;
+    padding: 20px;
+    transform: scaleY(1); /* 높이 확장 */
+}

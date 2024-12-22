@@ -1,0 +1,97 @@
+#choice{
+    margin: 0 auto;
+    padding : 10px 8%;
+    overflow: hidden;
+}
+
+.section-container{ /* 콘텐츠, 화살표 배치 */
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 80vw;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.choice-container{
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 70vw;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.slide-container {
+    display: flex;
+    transition: transform 0.5s ease;
+    width: 210vw; /* 컨테이너 너비를 세 배로 설정 */
+}
+
+.content-container {
+    display: flex;
+    width: 70vw;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    padding: 20px;
+}
+
+.slide-container img{
+    width: 200px;
+}
+
+.content-name {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.content-age{
+    display: inline-block;
+    padding: 5px 10px;
+    margin: 10px 0;
+    background-color: #db0001;
+    color: #fff;
+    border-radius: 5px;
+}
+    
+.content-message {
+    font-size: 16px;
+}
+
+.arrow{
+    position: absolute;
+    cursor: pointer;
+    font-size: 30px;
+    transition: transform 0.4s;
+    z-index: 10;
+}
+
+.arrow:hover{
+    transform: scale(1.5);
+}
+
+.arrow.left{
+    left:1%;
+}
+.arrow.right{
+    right:1%;
+}
+
+@media only screen and (max-width: 660px) {
+    .content-container{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    .content-info{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        margin: 0 auto;
+    }
+    .content-message{
+        display: none;
+    }
+}
+
